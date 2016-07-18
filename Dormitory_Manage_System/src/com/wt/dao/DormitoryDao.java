@@ -22,7 +22,6 @@ public class DormitoryDao extends BaseDao {
 		System.out.println("id-----" + id);
 
 		String hql = "DELETE FROM Dormitory d WHERE d.dormitory_id = ?";
-
 		getSession().createQuery(hql).setInteger(0, id).executeUpdate();
 
 	}

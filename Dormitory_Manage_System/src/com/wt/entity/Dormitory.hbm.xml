@@ -25,7 +25,8 @@
         
         <!-- 映射一对多的集合属性 -->
         <!-- inverse: 指定由哪一方维护关联关系，通常设置为 true，由多的一端来维护关联关系 -->
-        <set name="students" table="STUDENT" inverse="true" lazy="true">
+        <set name="students" table="STUDENT" inverse="true" lazy="true"
+        	 cascade="delete-orphan" >
             <!-- 指定多的表中的外键列的名字 -->
             <key>
                 <column name="DORMITORY_ID" />
