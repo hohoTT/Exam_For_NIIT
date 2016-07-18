@@ -47,7 +47,7 @@ a{
 }
 </style>
 
-<script type="text/javascript" src="static/js/account/adminLogins.js"></script>
+<script type="text/javascript" src="static/js/account/adminLogin.js"></script>
 
 <link rel="shortcut icon" href="image/favicon.ico" />
 
