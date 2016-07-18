@@ -42,13 +42,35 @@ a{
 </style>
 </head>
 <body>
+
+	<%
+		String isExist = "none";
+		String notExist = "none";
+		
+		String dormitoriesExist = (String) session.getAttribute("dormitoriesExist");
+		
+		System.out.println("dormitoriesExist -- " + dormitoriesExist);
+		
+		if(dormitoriesExist != null){
+			notExist = "block";
+		}
+		else{
+			isExist = "block";
+		}
+		
+	%>
+
 	<a href="/Dormitory_Manage_System/">
 		<p id="title">NIIT 宿舍管理系统</p>
 		<p id="title-tail">join &nbsp;us</p>
 	</a>
+	
+	<div class="info" class="wrap" style="display: <%=notExist%>">
+		<h1>暂时还没有宿舍信息 ~~</h1><br>
+	</div>
 
 	<div class="isinfo" class="wrap"
-		style="margin-left: 60px; margin-right: 60px;">
+		style="display: <%=isExist%>; margin-left: 60px; margin-right: 60px;">
 		<h1>宿舍信息如下 ~~</h1>
 		<table class="table table-striped">
 			<thead>

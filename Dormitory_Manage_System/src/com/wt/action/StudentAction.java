@@ -35,18 +35,21 @@ public class StudentAction extends ActionSupport {
 
 		List<Student> students = studentService.getAll();
 
-		// 以下为测试时使用
-		for (Student student : students) {
+		if(!students.isEmpty()){
+			// 以下为测试时使用
+			for (Student student : students) {
 
-			System.out.println("name -- " + student.getStudent_name());
-			System.out.println("phone -- " + student.getStudent_phone());
-			System.out.println("sex -- " + student.getStudent_sex());
+				System.out.println("name -- " + student.getStudent_name());
+				System.out.println("phone -- " + student.getStudent_phone());
+				System.out.println("sex -- " + student.getStudent_sex());
 
-		}
-		
-		if(students != null){
+			}
 			Map<String, Object> mapSession = ActionContext.getContext().getSession();
 			mapSession.put("students", students);
+			session.removeAttribute("studentExist");
+		}
+		else{
+			session.setAttribute("studentExist", "studentExist");
 		}
 		
 		return "studentList";

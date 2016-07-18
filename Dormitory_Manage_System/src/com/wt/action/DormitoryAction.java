@@ -18,7 +18,7 @@ public class DormitoryAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 
 	private DormitoryService dormitoryService;
-	
+
 	private Integer id;
 
 	ActionContext context = ActionContext.getContext();
@@ -34,29 +34,31 @@ public class DormitoryAction extends ActionSupport {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 	public String dormitoryList() {
 
 		List<Dormitory> dormitories = dormitoryService.getAll();
 
-		// 以下为测试时使用
-		for (Dormitory dormitory : dormitories) {
+		if (!dormitories.isEmpty()) {
+			// 以下为测试时使用
+			for (Dormitory dormitory : dormitories) {
 
-			System.out.println("name -- " + dormitory.getDormitory_name());
-			System.out.println("address -- " + dormitory.getDormitory_address());
+				System.out.println("name -- " + dormitory.getDormitory_name());
+				System.out.println("address -- " + dormitory.getDormitory_address());
 
-		}
-		
-		if(dormitories != null){
+			}
+
 			Map<String, Object> mapSession = ActionContext.getContext().getSession();
 			mapSession.put("dormitories", dormitories);
+			session.removeAttribute("dormitoriesExist");
+		} else {
+			session.setAttribute("dormitoriesExist", "dormitoriesExist");
 		}
-		
 
 		return "dormitoryList";
 	}
-	
-	public String edit_dormitoryPage(){
+
+	public String edit_dormitoryPage() {
 
 		Dormitory dormitory = dormitoryService.dormitoryCheck(id);
 
@@ -64,14 +66,13 @@ public class DormitoryAction extends ActionSupport {
 		String dormitory_name = dormitory.getDormitory_name();
 		String dormitory_address = dormitory.getDormitory_address();
 		Integer dormitory_phone = dormitory.getDormitory_phone();
-		
-		
+
 		Map<String, Object> mapSession = ActionContext.getContext().getSession();
 		mapSession.put("dormitory_id", dormitory_id);
 		mapSession.put("dormitory_name", dormitory_name);
 		mapSession.put("dormitory_address", dormitory_address);
 		mapSession.put("dormitory_phone", dormitory_phone);
-		
+
 		return "edit_dormitoryPage";
 	}
 
