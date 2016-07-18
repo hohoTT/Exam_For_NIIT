@@ -3,12 +3,14 @@ package com.wt.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+// 管理员实体类
 public class Admin implements Serializable {
 
-	private Integer admin_id;
-	private String admin_name;
-	private String admin_password;
-	private Date createTime;
+	private Integer admin_id;			// 管理员id
+	private String admin_name;			// 管理员名称
+	private String admin_password;		// 管理员密码
+	
+	private Date createTime;			// 管理员创建日期
 	
 	public Integer getAdmin_id() {
 		return admin_id;

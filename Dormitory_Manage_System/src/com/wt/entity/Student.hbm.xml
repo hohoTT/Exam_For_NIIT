@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-7-18 12:00:00 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.wt.entity">
+
+    <class name="Student" table="STUDENT">
+    
+        <id name="student_id" type="long">
+            <column name="STUDENT_ID" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="student_age" type="java.lang.Integer">
+            <column name="STUDENT_AGE" />
+        </property>
+        
+        <property name="student_sex" type="java.lang.String">
+            <column name="STUDENT_SEX" />
+        </property>
+        
+        <property name="student_phone" type="long">
+            <column name="STUDENT_PHONE" />
+        </property>
+        
+        <property name="student_classId" type="java.lang.Integer">
+            <column name="STUDENT_CLASSID" />
+        </property>
+        
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATETIME" />
+        </property>
+        
+        <!-- 
+			映射多对一的关联关系,使用 many-to-one 来映射多对一的关联关系 
+			name : 多这一端关联的那一端的属性名字
+			class : 一那一端属性对应的类名
+			column : 一那一端在多的那一端对应的数据表的外键的名字
+		-->
+        <many-to-one name="dormitory" class="Dormitory" 
+        			 column="DORMITORY_ID">
+        </many-to-one>
+        
+    </class>
+    
+</hibernate-mapping>
