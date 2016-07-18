@@ -1,4 +1,4 @@
-define("dormitory_delete_bsAlert", ["jquery", "bootstrap"], function($){
+define("user_delete_bsAlert", ["jquery", "bootstrap"], function($){
      function bsAlert(content){
          if(!$("#alert-modal").length) {
              var html = '<div class="modal fade" id="alert-modal" tabindex="-1" role="dialog"> ' +

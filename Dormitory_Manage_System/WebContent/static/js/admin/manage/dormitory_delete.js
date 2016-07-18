@@ -1,4 +1,4 @@
-require(["jquery", "dormitory_delete_bsAlert", "csrfToken", "validator"], function ($, user_delete_bsAlert, csrfTokenHeader) {
+require(["jquery", "bsAlert", "csrfToken", "validator"], function ($, bsAlert, csrfTokenHeader) {
 	
 	//1. 点击 delete 时, 弹出 确定是要删除 xx 的信息吗 ? 
 	// 若确定, 执行删除, 若不确定, 则取消
@@ -22,14 +22,14 @@ require(["jquery", "dormitory_delete_bsAlert", "csrfToken", "validator"], functi
 				
 				//若 data 的返回值为 1, 则提示 删除成功, 且把当前行删除
 				if(data == "1"){
-					user_delete_bsAlert("宿舍已成功删除!");
+					bsAlert("宿舍已成功删除!");
 
 					// 删除当前行
 					$tr.remove();
 				}
 				else{
 					//若 data 的返回值不是 1, 提示删除失败. 
-					user_delete_bsAlert("删除失败!");
+					bsAlert("删除失败!");
 				}
 				
 			});	

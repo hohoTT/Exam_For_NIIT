@@ -82,6 +82,9 @@ a{
 			</tbody>
 		</table>
 	</div>
+
+<script type="text/javascript" src="static/js/config.js"></script>
+<script type="text/javascript" src="static/js/require.js"></script>
 	
 <script type="text/javascript" src="static/js/admin/manage/dormitory_delete.js"></script>
 </body>
