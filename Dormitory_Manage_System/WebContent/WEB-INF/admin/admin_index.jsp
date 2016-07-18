@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,7 +19,6 @@
 
 <!-- 自定义CSS样式 -->
 <style type="text/css">
-
 #title {
 	font-size: 40px;
 }
@@ -28,16 +27,15 @@
 	font-size: 20px;
 }
 
-h2{
+h2 {
 	font-size: 30px;
-	font-family: source_code_pro,"PingFangSC-Regular",
-	"Heiti SC","Microsoft Yahei",monospace;
+	font-family: source_code_pro, "PingFangSC-Regular", "Heiti SC",
+		"Microsoft Yahei", monospace;
 }
 
-a{
+a {
 	color: #428bca;
 }
-
 </style>
 </head>
 <body>
@@ -66,26 +64,27 @@ a{
 						<td class="success">${ dormitory_name }</td>
 						<td class="warning">${ dormitory_address }</td>
 						<td class="danger">${ dormitory_phone }</td>
-						<td class="center">
-			            <a class="btn btn-info" href="#">
-			                <i class="glyphicon glyphicon-edit icon-white"></i>
-			                Edit
-			            </a>
-			            <a class="btn btn-danger delete" href="dormitoryDetele?id=${ dormitory_id }">
-			                <i class="glyphicon glyphicon-trash icon-white"></i>
-			                Delete
-			            </a>
-						<input type="hidden" value="${ dormitory_name }"/>
-			        </td>
+						<td class="center"><a class="btn btn-info" href="#"> <i
+								class="glyphicon glyphicon-edit icon-white"></i> Edit
+						</a> <a class="btn btn-danger delete"
+							href="dormitoryDetele?id=${ dormitory_id }"> <i
+								class="glyphicon glyphicon-trash icon-white"></i> Delete
+						</a> <input type="hidden" value="${ dormitory_name }" /></td>
 					</tr>
 				</s:iterator>
 			</tbody>
 		</table>
 	</div>
 
-<script type="text/javascript" src="static/js/config.js"></script>
-<script type="text/javascript" src="static/js/require.js"></script>
-	
-<script type="text/javascript" src="static/js/admin/manage/dormitory_delete.js"></script>
+	<a class="btn btn-info center" href="addNewDormitoryPage" target="_blank"> <i
+		class="glyphicon glyphicon-edit icon-white"></i>
+		添加新的宿舍
+	</a>
+
+	<script type="text/javascript" src="static/js/config.js"></script>
+	<script type="text/javascript" src="static/js/require.js"></script>
+
+	<script type="text/javascript"
+		src="static/js/admin/manage/dormitory_delete.js"></script>
 </body>
 </html>

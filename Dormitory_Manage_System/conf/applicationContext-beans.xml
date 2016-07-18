@@ -51,5 +51,10 @@
 		  scope="prototype">
 		  <property name="adminService" ref="adminService"></property>
 	</bean>
+	
+	<bean id="dormitoryJsonHandle" class="com.wt.jsonHandle.DormitoryJsonHandle"
+		  scope="prototype">
+		  <property name="dormitoryService" ref="dormitoryService"></property>
+	</bean>
 
 </beans>

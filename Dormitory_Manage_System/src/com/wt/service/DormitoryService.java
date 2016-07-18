@@ -24,4 +24,12 @@ public class DormitoryService {
 	public void delete(Integer id) {
 		dormitoryDao.delete(id);
 	}
+	
+	// 宿舍注册，向数据库中插入数据;
+	// 宿舍修改信息，调用相同的方法
+	public void saveOrUpdate(Dormitory dormitory){
+		
+		dormitoryDao.saveOrUpdate(dormitory);
+		
+	}
 }
