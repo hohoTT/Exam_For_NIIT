@@ -71,7 +71,7 @@ a{
 			                <i class="glyphicon glyphicon-edit icon-white"></i>
 			                Edit
 			            </a>
-			            <a class="btn btn-danger delete" href="dormitory-delete?id=${ dormitory_id }">
+			            <a class="btn btn-danger delete" href="dormitoryDetele?id=${ dormitory_id }">
 			                <i class="glyphicon glyphicon-trash icon-white"></i>
 			                Delete
 			            </a>

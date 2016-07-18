@@ -61,8 +61,17 @@
 		<action name="adminPage" class="com.wt.action.AdminAction"
 			    method="adminDormitoryList">
 			<result name="adminDormitoryList">/WEB-INF/admin/admin_index.jsp</result>
+			
 			<!-- 使用自定义管理员需要登录的拦截器 -->  
             <interceptor-ref name="adminLoginInterceptor" />  
+		</action>
+		
+		<action name="dormitoryDetele" class="com.wt.action.AdminAction"
+			method="dormitoryDetele">
+			<result name="dormitoryDetele" type="stream">
+		        <param name="contentType">text/html</param>
+		        <param name="inputName">inputStream</param>
+		    </result>
 		</action>
     	
     </package>

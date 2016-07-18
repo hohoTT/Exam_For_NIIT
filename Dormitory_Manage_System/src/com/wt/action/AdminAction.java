@@ -1,5 +1,8 @@
 package com.wt.action;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
@@ -13,11 +16,15 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.wt.entity.Dormitory;
 import com.wt.service.DormitoryService;
 
-public class AdminAction extends ActionSupport{
+public class AdminAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 
 	private DormitoryService dormitoryService;
+
+	private InputStream inputStream;
+
+	private Integer id;
 
 	ActionContext context = ActionContext.getContext();
 
@@ -29,6 +36,14 @@ public class AdminAction extends ActionSupport{
 		this.dormitoryService = dormitoryService;
 	}
 	
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public String adminDormitoryList() {
 
 		List<Dormitory> dormitories = dormitoryService.getAll();
@@ -40,13 +55,30 @@ public class AdminAction extends ActionSupport{
 			System.out.println("address -- " + dormitory.getDormitory_address());
 
 		}
-		
-		if(dormitories != null){
+
+		if (dormitories != null) {
 			Map<String, Object> mapSession = ActionContext.getContext().getSession();
 			mapSession.put("dormitories", dormitories);
 		}
-		
+
 		return "adminDormitoryList";
 	}
-	
+
+	public String dormitoryDetele() {
+
+		try {
+			dormitoryService.delete(id);
+			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				inputStream = new ByteArrayInputStream("0".getBytes("UTF-8"));
+			} catch (UnsupportedEncodingException e1) {
+				e1.printStackTrace();
+			}
+		}
+
+		return "dormitoryDetele";
+	}
+
 }

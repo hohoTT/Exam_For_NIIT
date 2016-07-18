@@ -16,4 +16,15 @@ public class DormitoryDao extends BaseDao {
 
 	}
 
+	// ËŞÉáÉ¾³ıµÄ´úÂëÂß¼­
+	public void delete(Integer id) {
+		
+		System.out.println("id-----" + id);
+
+		String hql = "DELETE FROM Dormitory d WHERE d.dormitory_id = ?";
+
+		getSession().createQuery(hql).setInteger(0, id).executeUpdate();
+
+	}
+
 }
