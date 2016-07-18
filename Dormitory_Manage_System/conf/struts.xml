@@ -24,8 +24,33 @@
 
     <package name="default" namespace="/" extends="struts-default">
     
+		<!-- 自定义拦截器栈  -->
+		<interceptors>
+			
+			<!-- 自定义管理员需要登录的拦截器 -->
+			<interceptor name="adminLoginInterceptor" 
+				class="com.wt.interceptor.AdminLoginInterceptor">
+			</interceptor>
 		
+		</interceptors>
+		
+		<!-- 定义全局Result -->  
+        <global-results>  
+            <!-- 当返回adminLogin视图名时，转入管理员登录页面 -->  
+            <result name="adminLogin">/WEB-INF/admin/admin_login.jsp</result> 
+        </global-results>  
     
+    
+    	<!-- 以下为管理员部分的链接配置 -->
+		
+		<!-- 跳转到管理员页面  -->
+		<action name="adminPage" class="com.wt.action.AdminAction"
+			    method="userList">
+			<result name="userList">/WEB-INF/admin/admin_index.jsp</result>
+			<!-- 使用自定义管理员需要登录的拦截器 -->  
+            <interceptor-ref name="adminLoginInterceptor" />  
+		</action>
+    	
     </package>
 
 </struts>
