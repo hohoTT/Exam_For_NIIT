@@ -9,7 +9,8 @@ public class DormitoryDao extends BaseDao {
 	// 查询所有的宿舍信息
 	public List<Dormitory> getAll() {
 
-		String hql = "FROM Dormitory";
+		// 以下的语句为解决懒加载异常所做的联合查询处理
+		String hql = "FROM Dormitory d LEFT OUTER JOIN FETCH d.students";
 
 		return getSession().createQuery(hql).list();
 
