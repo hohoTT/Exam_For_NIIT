@@ -17,38 +17,61 @@
 	media="all">
 
 <link rel="shortcut icon" href="image/favicon.ico" />
+<!-- 自定义CSS样式 -->
+<style type="text/css">
+#title {
+	font-size: 40px;
+}
 
+#title-tail {
+	font-size: 20px;
+}
+
+h2 {
+	font-size: 30px;
+	font-family: source_code_pro, "PingFangSC-Regular", "Heiti SC",
+		"Microsoft Yahei", monospace;
+}
+
+a {
+	color: #428bca;
+}
+</style>
 </head>
 <body>
+	<a href="/Dormitory_Manage_System/">
+		<p id="title">NIIT 宿舍管理系统</p>
+		<p id="title-tail">join &nbsp;us</p>
+	</a>
 
-
-	<div class="isinfo" class="wrap" style="margin-left: 60px; margin-right: 60px;">
+	<div class="isinfo" class="wrap"
+		style="margin-left: 60px; margin-right: 60px;">
 		<h1>学生信息如下 ~~</h1>
 		<table class="table table-striped">
 			<thead>
-			    <tr>
-			        <th>ID</th>
-			        <th>学生名称</th>
-			        <th>学生年龄</th>
-			        <th>学生性别</th>
-			        <th>学生联系方式</th>
-			        <th>学生班级号</th>
-			    </tr>
-		    </thead>
-		    <tbody>
-		    <s:iterator value="#session.students">
-			    <tr>
-			        <td class="info">${ student_id }</td>
-			        <td class="success">${ student_name }</td>
-			        <td class="warning">${ student_age }</td>
-			        <td class="danger">${ student_sex }</td>
-			        <td class="info">${ student_phone }</td>
-			        <td class="success">${ student_classId }</td>
-			    </tr>
-			</s:iterator>
-		    </tbody>
+				<tr>
+					<th>ID</th>
+					<th>学生名称</th>
+					<th>学生年龄</th>
+					<th>学生性别</th>
+					<th>学生联系方式</th>
+					<th>学生班级号</th>
+				</tr>
+			</thead>
+			<tbody>
+				<s:iterator value="#session.students">
+					<tr>
+						<td class="info">${ student_id }</td>
+						<td class="success">${ student_name }</td>
+						<td class="warning">${ student_age }</td>
+						<td class="danger">${ student_sex }</td>
+						<td class="info">${ student_phone }</td>
+						<td class="success">${ student_classId }</td>
+					</tr>
+				</s:iterator>
+			</tbody>
 		</table>
 	</div>
-	
+
 </body>
 </html>
