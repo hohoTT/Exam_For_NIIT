@@ -39,6 +39,14 @@
             <!-- 当返回adminLogin视图名时，转入管理员登录页面 -->  
             <result name="adminLogin">/WEB-INF/admin/admin_login.jsp</result> 
         </global-results>  
+        
+        
+        <!-- 以下为首页中链接的跳转  -->
+    	<!-- 宿舍信息查询链接跳转 -->
+    	<action name="dormitoryPage" class="com.wt.action.DormitoryAction"
+			    method="dormitoryList">
+			<result name="dormitoryList">/WEB-INF/dormitory/dormitory_info.jsp</result>
+		</action>
     
     
     	<!-- 以下为管理员部分的链接配置 -->
