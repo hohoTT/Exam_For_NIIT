@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>添加新的宿舍</title>
+<title>编辑宿舍信息</title>
 
 <link rel="stylesheet" href="static/css/global.css" media="all">
 
@@ -17,7 +17,7 @@
 <script type="text/javascript" src="static/js/require.js"></script>
 
 <script type="text/javascript"
-	src="static/js/admin/manage/add_newDormitory.js"></script>
+	src="static/js/admin/manage/edit_dormitory.js"></script>
 
 <!-- 自定义CSS样式 -->
 <style type="text/css">
@@ -48,13 +48,13 @@ a {
 	
 	<div id="register-div" class="container main">
 		<div class="col-md-6 col-md-offset-3">
-			<h2 class="text-center">添加新的宿舍</h2>
+			<h2 class="text-center">编辑宿舍信息</h2>
 
 			<form id="register-form" method="post">
 
 				<div class="form-group">
 					<label for="dormitory_id">宿舍ID</label> <input type="number"
-						class="form-control input-lg" id="dormitory_id"
+						class="form-control input-lg" id="dormitory_id" value="${ dormitory_id }"
 						name="dormitory_id" placeholder="宿舍ID" data-error="请填写宿舍ID"
 						required autofocus>
 					<div class="help-block with-errors"></div>
@@ -62,7 +62,7 @@ a {
 
 				<div class="form-group">
 					<label for="dormitory_name">宿舍名称</label> <input type="text"
-						class="form-control input-lg" id="dormitory_name"
+						class="form-control input-lg" id="dormitory_name" value="${ dormitory_name }"
 						name="dormitory_name" placeholder="宿舍名称" data-error="请填写宿舍名称"
 						required>
 					<div class="help-block with-errors"></div>
@@ -70,7 +70,7 @@ a {
 
 				<div class="form-group">
 					<label for="dormitory_address">宿舍地址</label> <input type="text"
-						class="form-control input-lg" id="dormitory_address"
+						class="form-control input-lg" id="dormitory_address" value="${ dormitory_address }"
 						name="dormitory_address" placeholder="宿舍地址" data-error="请填写宿舍地址"
 						required>
 					<div class="help-block with-errors"></div>
@@ -78,7 +78,7 @@ a {
 
 				<div class="form-group">
 					<label for="dormitory_phone">宿舍电话号码</label> <input type="number"
-						class="form-control input-lg" id="dormitory_phone"
+						class="form-control input-lg" id="dormitory_phone" value="${ dormitory_phone }"
 						name="dormitory_phone" placeholder="宿舍电话号码" data-error="请填写宿舍电话号码"
 						required>
 					<div class="help-block with-errors"></div>

@@ -2,6 +2,8 @@ package com.wt.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
+
 import com.wt.entity.Dormitory;
 
 public class DormitoryDao extends BaseDao {
@@ -30,8 +32,30 @@ public class DormitoryDao extends BaseDao {
 	// 宿舍修改信息，调用相同的方法
 	public void saveOrUpdate(Dormitory dormitory){
 		
+		getSession().saveOrUpdate(dormitory);
+		
+	}
+
+	// 宿舍注册，向数据库中插入数据;
+	public void save(Dormitory dormitory){
+		
 		getSession().save(dormitory);
 		
+	}
+	
+	// 查找宿舍是否存在
+	public Dormitory dormitoryCheck(Integer id){
+		Dormitory dormitory = null;
+		
+		String hql = "FROM Dormitory d LEFT OUTER JOIN FETCH d.students WHERE d.dormitory_id = ?";
+		
+		Query query = getSession().createQuery(hql);
+		
+		query.setInteger(0, id);
+		
+		dormitory = (Dormitory) query.uniqueResult();
+		
+		return dormitory;
 	}
 
 }

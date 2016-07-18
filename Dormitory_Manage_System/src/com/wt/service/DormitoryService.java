@@ -32,4 +32,18 @@ public class DormitoryService {
 		dormitoryDao.saveOrUpdate(dormitory);
 		
 	}
+	
+	// 宿舍注册，向数据库中插入数据;
+	public void save(Dormitory dormitory){
+		
+		dormitoryDao.save(dormitory);
+		
+	}
+	
+	// 查找宿舍是否存在
+	public Dormitory dormitoryCheck(Integer id){
+		
+		return dormitoryDao.dormitoryCheck(id);
+		
+	}
 }

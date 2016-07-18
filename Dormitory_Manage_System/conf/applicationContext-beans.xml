@@ -56,5 +56,10 @@
 		  scope="prototype">
 		  <property name="dormitoryService" ref="dormitoryService"></property>
 	</bean>
+	
+	<bean id="editDormitoryJsonHandle" class="com.wt.jsonHandle.EditDormitoryJsonHandle"
+		  scope="prototype">
+		  <property name="dormitoryService" ref="dormitoryService"></property>
+	</bean>
 
 </beans>

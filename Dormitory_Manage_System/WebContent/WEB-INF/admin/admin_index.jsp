@@ -7,7 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>管理员界面</title>
 
-
 <!-- css 样式部分 -->
 <link rel="stylesheet" href="static/css/dormitory/style.css" media="all">
 
@@ -64,7 +63,7 @@ a {
 						<td class="success">${ dormitory_name }</td>
 						<td class="warning">${ dormitory_address }</td>
 						<td class="danger">${ dormitory_phone }</td>
-						<td class="center"><a class="btn btn-info" href="#"> <i
+						<td class="center"><a class="btn btn-info" href="edit_dormitoryPage?id=${ dormitory_id }"> <i
 								class="glyphicon glyphicon-edit icon-white"></i> Edit
 						</a> <a class="btn btn-danger delete"
 							href="dormitoryDetele?id=${ dormitory_id }"> <i
