@@ -11,6 +11,10 @@
             <generator class="assigned" />
         </id>
         
+        <property name="student_name" type="java.lang.String">
+            <column name="STUDENT_NAME" />
+        </property>
+        
         <property name="student_age" type="java.lang.Integer">
             <column name="STUDENT_AGE" />
         </property>

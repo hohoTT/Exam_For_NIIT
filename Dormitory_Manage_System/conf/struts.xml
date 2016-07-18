@@ -47,6 +47,12 @@
 			    method="dormitoryList">
 			<result name="dormitoryList">/WEB-INF/dormitory/dormitory_info.jsp</result>
 		</action>
+		
+		<!-- 学生信息查询链接跳转 -->
+    	<action name="studentPage" class="com.wt.action.StudentAction"
+			    method="studentList">
+			<result name="studentList">/WEB-INF/student/student_info.jsp</result>
+		</action>
     
     
     	<!-- 以下为管理员部分的链接配置 -->

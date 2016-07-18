@@ -12,6 +12,10 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
+	<bean id="studentDao" class="com.wt.dao.StudentDao">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 	
 	<!-- Service 层配置  -->
 	<bean id="adminService" class="com.wt.service.AdminService">
@@ -20,6 +24,10 @@
 	
 	<bean id="dormitoryService" class="com.wt.service.DormitoryService">
 		<property name="dormitoryDao" ref="dormitoryDao"></property>
+	</bean>
+	
+	<bean id="studentService" class="com.wt.service.StudentService">
+		<property name="studentDao" ref="studentDao"></property>
 	</bean>
 
 	<!-- Action 部分的配置  -->
@@ -31,6 +39,12 @@
 		  scope="prototype">
 		  <property name="dormitoryService" ref="dormitoryService"></property>
 	</bean>
+	
+	<bean id="studentAction" class="com.wt.action.StudentAction"
+		  scope="prototype">
+		  <property name="studentService" ref="studentService"></property>
+	</bean>
+	
 	
 	<!-- json 数据管理的配置  -->
 	<bean id="adminLoginJsonHandle" class="com.wt.jsonHandle.AdminLoginJsonHandle"

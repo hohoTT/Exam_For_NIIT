@@ -6,6 +6,7 @@ import java.util.Date;
 public class Student implements Serializable {
 
 	private long student_id; // 学号
+	private String student_name; // 学生姓名
 	private Integer student_age; // 学生年龄
 	private String student_sex; // 学生性别
 	private long student_phone; // 学生联系方式
@@ -21,10 +22,11 @@ public class Student implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(long student_id, Integer student_age, String student_sex, long student_phone,
+	public Student(long student_id, String student_name, Integer student_age, String student_sex, long student_phone,
 			Integer student_classId, Date createTime, Dormitory dormitory) {
 		super();
 		this.student_id = student_id;
+		this.student_name = student_name;
 		this.student_age = student_age;
 		this.student_sex = student_sex;
 		this.student_phone = student_phone;
@@ -39,6 +41,14 @@ public class Student implements Serializable {
 
 	public void setStudent_id(long student_id) {
 		this.student_id = student_id;
+	}
+
+	public String getStudent_name() {
+		return student_name;
+	}
+
+	public void setStudent_name(String student_name) {
+		this.student_name = student_name;
 	}
 
 	public Integer getStudent_age() {
@@ -87,13 +97,6 @@ public class Student implements Serializable {
 
 	public void setDormitory(Dormitory dormitory) {
 		this.dormitory = dormitory;
-	}
-
-	@Override
-	public String toString() {
-		return "Student [student_id=" + student_id + ", student_age=" + student_age + ", student_sex=" + student_sex
-				+ ", student_phone=" + student_phone + ", student_classId=" + student_classId + ", createTime="
-				+ createTime + ", dormitory=" + dormitory + "]";
 	}
 
 }

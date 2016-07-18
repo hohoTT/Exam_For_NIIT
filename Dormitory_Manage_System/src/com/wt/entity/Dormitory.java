@@ -73,10 +73,4 @@ public class Dormitory implements Serializable {
 		this.students = students;
 	}
 
-	@Override
-	public String toString() {
-		return "Dormitory [dormitory_id=" + dormitory_id + ", dormitory_name=" + dormitory_name + ", dormitory_address="
-				+ dormitory_address + ", dormitory_phone=" + dormitory_phone + ", students=" + students + "]";
-	}
-
 }
